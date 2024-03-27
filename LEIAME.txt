@@ -1,0 +1,23 @@
+
+CLIENTES
+
+METHOD['GET']	
+http://localhost/projeto-yii/projeto-teste/web/clientes?expand=produtos (listagem dos cliente)
+
+METHOD['GET']	
+http://localhost/projeto-yii/projeto-teste/web/clientes?per-page=4&page=2 (listagem cliente por pagina)
+
+METHOD['POST']	
+http://localhost/projeto-yii/projeto-teste/web/clientes (cadastro de clientes)
+
+{
+"nome":"Cliente Teste",
+"cpf":"123123123",
+"endereco": "Rua Teste1, nº 123",
+"foto":"foto.jpg",
+"sexo":"M"
+}
+-------------------------------------------------------------------------------------------------------------
+PRODUTOS
+
+http://localhost/projeto-yii/projeto-teste/web/clientes/id_cliente/produtos (pesquisar produtos pelo cliente)
