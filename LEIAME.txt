@@ -1,11 +1,43 @@
+BAIXAR O PROJETO (https://github.com/thyago666/yii2)
 
+CRIAR O BANCO DE DADOS phpMyadmin (yii2basic)
+
+ACESSAR O PROJETO PELO VSCODE
+
+CONFIGURAR O ARQUIVO config\DB.php (com suas credenciais do banco)
+
+STARTAR O XAMPP
+
+EXECUTAR AS MIGRATION (php yii migrate)
+
+
+------------------------------------------------------------------------------------------------
+
+ACESSAR O POSTMAN
+
+ANTES DE EXECUTAR OS ENDPOINTS ABAIXO É PRECISO AUTORIZAR, E O YII JA TRAS 2 USUARIOS DE TESTE NA MODEL
+
+ 'id' => '100',
+ 'username' => 'admin',
+ 'password' => 'admin',
+ 'authKey' => 'test100key',
+ 'accessToken' => '100-token',
+
+ 'id' => '101',
+ 'username' => 'demo',
+ 'password' => 'demo',
+ 'authKey' => 'test101key',
+ 'accessToken' => '101-token',
+
+Então pelo postman na aba autorizathion de cada endpoint
+	type = Bearer Token
+	token = 100-token (por ex)
+
+
+-----------------------------------------------------------------------------------------------
 CLIENTES
 
-METHOD['GET']	
-http://localhost/projeto-yii/projeto-teste/web/clientes?expand=produtos (listagem dos cliente)
-
-METHOD['GET']	
-http://localhost/projeto-yii/projeto-teste/web/clientes?per-page=4&page=2 (listagem cliente por pagina)
+EXECUTAR OS ENDPOINTS PELO POSTMAN
 
 METHOD['POST']	
 http://localhost/projeto-yii/projeto-teste/web/clientes (cadastro de clientes)
@@ -17,7 +49,29 @@ http://localhost/projeto-yii/projeto-teste/web/clientes (cadastro de clientes)
 "foto":"foto.jpg",
 "sexo":"M"
 }
+
+METHOD['GET']	
+http://localhost/projeto-yii/projeto-teste/web/clientes?expand=produtos (listagem dos cliente)
+
+METHOD['GET']	
+http://localhost/projeto-yii/projeto-teste/web/clientes?per-page=4&page=2 (listagem cliente por pagina)
+
+
 -------------------------------------------------------------------------------------------------------------
 PRODUTOS
 
+METHOD['POST']
+http://localhost/projeto-yii/projeto-teste/web/produtos (cadastrar produtos)
+
+{
+"nome":"TV",
+"preco":"100",
+"cliente_id":1,
+"foto":"foto.jpg"
+}
+
+METHOD['GET']
+http://localhost/projeto-yii/projeto-teste/web/produto/produto?per-page=4&page=1 (listagem produtos por pagina)
+
+METHOD['GET']
 http://localhost/projeto-yii/projeto-teste/web/clientes/id_cliente/produtos (pesquisar produtos pelo cliente)
