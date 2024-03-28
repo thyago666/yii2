@@ -40,4 +40,10 @@ class ProdutoController extends ActiveController{
         ]);
     }
 
+    public function actionProduto(){
+
+      $produto = $this->modelClass::find()->all();
+     return $produto;
+    }
+
 }
